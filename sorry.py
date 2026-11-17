@@ -10,12 +10,13 @@ st.write("对不起，我错了。以下是我用AI为你定制的专属道歉�
 # 侧边栏
 with st.sidebar:
     st.header("⚙️ 设置")
-    api_key = st.text_input("请输入 DeepSeek API Key:", type="password")
-    reason = st.text_area("他为什么惹你生气了？（填一句就行，比如：打游戏没回消息）")
+    # 直接从系统保险箱里拿 Key，不需要用户输入
+    api_key = st.secrets["DEEPSEEK_API_KEY"]
+    reason = st.text_area("付瑞方为什么惹你生气了？（填一句就行，比如：打游戏没回消息）")
 
 # 主界面
 if st.button("生成道歉信并请求原谅"):
-    if not api_key or not reason:
+    if not reason:
         st.warning("请先在左边输入 API Key 和 生气原因！")
     else:
         with st.spinner("正在诚恳反思中..."):
