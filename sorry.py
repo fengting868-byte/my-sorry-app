@@ -4,7 +4,7 @@ from openai import OpenAI
 # 页面配置
 st.set_page_config(page_title="致女朋友的道歉信", page_icon="💖", layout="centered")
 
-st.title("💖 专属道歉生成器")
+st.title("💖 又不小心惹闵蝶生气了")
 st.write("对不起，我错了。以下是我用AI为你定制的专属道歉：")
 
 # 侧边栏
